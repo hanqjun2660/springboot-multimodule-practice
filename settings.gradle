@@ -1,3 +1,3 @@
 rootProject.name = 'springbootmultimodulepractice'
 include 'core'
-include 'management-api'
+include 'application'

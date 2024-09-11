@@ -1,0 +1,11 @@
+server:
+  port: 4444
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  profiles:
+    include: core

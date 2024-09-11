@@ -1,4 +1,4 @@
-package com.example.managementapi;
+package com.example.application;
 
 import com.example.core.jwt.JWTUtil;
 import lombok.RequiredArgsConstructor;
@@ -8,14 +8,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.example.core", "com.example.managementapi"})
+@ComponentScan(basePackages = {"com.example.core", "com.example.application"})
 @RequiredArgsConstructor
-public class ManagementApiApplication implements CommandLineRunner {
+public class Application implements CommandLineRunner {
 
     private final JWTUtil jwtUtil;
 
     public static void main(String[] args) {
-        SpringApplication.run(ManagementApiApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
     @Override
