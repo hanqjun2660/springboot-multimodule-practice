@@ -1,0 +1,13 @@
+server:
+  port: 4544
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  jwt:
+    secret: vmfhaltmskdlstkfkdgodyroqkfwkdbalroqkfwkdbalaaaaaaaaaaaaaaaabbbbb
+    access-duration: 1800000
+    refresh-duration: 604800000
