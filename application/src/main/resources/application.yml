@@ -8,4 +8,4 @@ server:
 
 spring:
   profiles:
-    include: core
+    include: core, manage

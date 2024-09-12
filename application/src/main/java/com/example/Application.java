@@ -1,14 +1,12 @@
-package com.example.application;
+package com.example;
 
 import com.example.core.jwt.JWTUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.example.core", "com.example.application"})
 @RequiredArgsConstructor
 public class Application implements CommandLineRunner {
 
@@ -20,6 +18,6 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println(jwtUtil.createToken("access", 1L, "admin", 1800000L));
+        System.out.println(jwtUtil.createToken("access", 1L, "ROLE_MANAGE", 1800000L));
     }
 }
