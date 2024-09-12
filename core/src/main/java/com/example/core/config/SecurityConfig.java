@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -52,6 +53,9 @@ public class SecurityConfig {
         // csrf 비활성화
         http.csrf(AbstractHttpConfigurer ->  AbstractHttpConfigurer.disable());
 
+        //h2
+        http.headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
+
         // jwt filter
         http.addFilterBefore(new JWTFilter(jwtUtil), UsernamePasswordAuthenticationFilter.class);
 
@@ -77,6 +81,7 @@ public class SecurityConfig {
         // Authorize
         http.authorizeHttpRequests((auth) -> auth
                 .requestMatchers("/api/v1/**").hasAnyRole("ADMIN")
+                .requestMatchers("/h2-console/**").permitAll()
                 .anyRequest().permitAll()
         );
 
