@@ -18,6 +18,6 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println(jwtUtil.createToken("access", 1L, "ROLE_MANAGE", 1800000L));
+        System.out.println(jwtUtil.createToken("access", 1L, "ROLE_ADMIN", 1800000L));
     }
 }
