@@ -1,4 +1,8 @@
 rootProject.name = 'springbootmultimodulepractice'
 include 'core'
 include 'application'
-include 'manage'
+
+include 'internalAPI'
+include 'internalAPI:user'
+
+include 'externalAPI'

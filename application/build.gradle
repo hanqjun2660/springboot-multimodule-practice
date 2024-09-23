@@ -8,5 +8,5 @@ tasks.named('jar'){ // jar 설정은 끄기
 
 dependencies {
     implementation project(':core')
-    implementation project(':manage')
+    implementation project(':internalAPI')
 }
